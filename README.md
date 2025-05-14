@@ -79,8 +79,8 @@ By tokenizing products as NFTs on Polygon, stakeholders can seamlessly transfer 
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/Prasang023/EthForAll_EthermionsV2.git
-   cd EthForAll_EthermionsV2/frontend
+   https://github.com/nikhlu07/Supply-chain.git
+   cd Supply-chain/frontend
    ```
 2. Install dependencies:
 
