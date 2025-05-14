@@ -1,4 +1,4 @@
-**EthForAll Ethermions V2**
+
 A decentralized, blockchain-powered supply chain management system that ensures end-to-end transparency, traceability, and security from manufacturer to end customer.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -36,6 +36,7 @@ By tokenizing products as NFTs on Polygon, stakeholders can seamlessly transfer 
 
 ---
 
+![Supplychain1](/images/supply1.png)
 ## ✨ Features
 
 * **Product Minting**: Manufacturers register products (title, description, images, videos) and mint an NFT with embedded metadata.
@@ -89,7 +90,7 @@ By tokenizing products as NFTs on Polygon, stakeholders can seamlessly transfer 
 * [Arcana account](https://arcana.network)
 
 ---
-
+![Supplychain2](/images/supply2.png)
 ## 💻 Installation
 
 ### Frontend
@@ -165,6 +166,7 @@ Ensure the following environment variables are set in **both** frontend (`.env.l
 
 ---
 
+![Supplychain3](/images/supply3.png)
 ## 📝 Smart Contract Addresses
 
 * **NFT Contract**: [0xf3E09b01F9678A1562b184Bb4512E163A387B4Cd](https://mumbai.polygonscan.com/address/0xf3E09b01F9678A1562b184Bb4512E163A387B4Cd#code)
