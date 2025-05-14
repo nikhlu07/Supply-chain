@@ -1,126 +1,193 @@
-# Problem
+**EthForAll Ethermions V2**
+A decentralized, blockchain-powered supply chain management system that ensures end-to-end transparency, traceability, and security from manufacturer to end customer.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Supply chain management is a crucial aspect of business operations, as it helps companies
-to track the movement of goods and services from raw material sourcing to the end
-customer. However, the current supply chain management systems are fragmented, lack
-transparency, and are vulnerable to fraud and counterfeiting, leading to inefficiencies and a
-loss of trust between different stakeholders.
+## 🚀 Table of Contents
 
-# Solution
+1. [Overview](#overview)
+2. [Features](#features)
+3. [Architecture](#architecture)
+4. [Tech Stack](#tech-stack)
+5. [Prerequisites](#prerequisites)
+6. [Installation](#installation)
 
-We are using blockchain-based decentralised supply chain management system to
-provide a secure, transparent, and tamper-proof record of transactions and traceability of
-products throughout the supply chain. It aims to improve supply chain efficiency, reduce
-costs, enhance transparency, increase trust among supply chain partners, and prevent
-counterfeits and frauds. The decentralised nature of the system leads to improved collaboration, increased transparency, and reduced
-operational costs for all participants.
+   * [Frontend](#frontend)
+   * [Backend](#backend)
+7. [Configuration](#configuration)
+8. [Usage](#usage)
+9. [Smart Contract Addresses](#smart-contract-addresses)
+10. [Deployed Application](#deployed-application)
+11. [Contributing](#contributing)
+12. [License](#license)
+13. [Contact](#contact)
 
-# Project WorkFlow
+---
 
-1. Manufacturer registers the product on the mint page of the website by entering the details of the product (Title, Description, Image and Video).
-2. The Video is uploaded using the livepeer and the video data is combined with all other product inormation and uploaded on IPFS network.
-3. A QR is generated for all the information which is then minted as an nft using the manufaturers wallet.
-4. Manufaturer of the project needs to print this QR Code and attach this to the product physically before shipping of the project.
-5. Now whenever anyone scans this QR, he/she is redirected to a page where all the real time information about the product can be seen which includes the current owner of the product as well as the images or videos attached along the supply chain while shipping. It can be scanned using any QR code scanner being user-friendly.
-6. At every level of the supply chain, whenever the product is transffered from one person to another, current owner needs to scan the QR code and trnsfer the nft to another person. In this way, all the past transactions about the product are recorded along with the nft information making it fully transparent in nature.
-7. We can use the "Secure QR", which is a non-copieble QR code i.e it losts it data on reprinting/photocopying so that to avoid frauds like fake products selling, etc.  
-   
-# Quick Start for frontend
+## 📖 Overview
 
-📄 Clone or fork this repo :`https://github.com/Prasang023/EthForAll_EthermionsV2.git`:
+Traditional supply chain systems suffer from fragmentation, lack of transparency, and vulnerability to fraud, leading to inefficiencies and loss of trust. **EthForAll Ethermions V2** leverages blockchain technology to create a decentralized supply chain management platform that:
 
-```sh
-git clone https://github.com/Prasang023/EthForAll_EthermionsV2.git
+* Records every transaction in a tamper-proof, transparent ledger.
+* Provides real-time product provenance and ownership history.
+* Integrates multimedia assets (images & videos) via IPFS and Livepeer for rich traceability.
+* Protects against counterfeiting using non-duplicable "Secure QR" codes.
+
+By tokenizing products as NFTs on Polygon, stakeholders can seamlessly transfer ownership, view event history, and authenticate authenticity with a simple QR code scan.
+
+---
+
+## ✨ Features
+
+* **Product Minting**: Manufacturers register products (title, description, images, videos) and mint an NFT with embedded metadata.
+* **Live Video Tracking**: Upload and stream supply chain videos using Livepeer, with metadata stored on IPFS.
+* **Transparent Transfers**: Ownership transfers recorded on-chain; each scan of the product’s QR code displays current and past owner data.
+* **Secure QR Codes**: Prevent fraud with non-reproducible QR codes that lose data on reprinting.
+* **Decentralized Auth**: Social login (Arcana + RainbowKit), email auth, and Polygon ID for secure interactions.
+* **Scalable Backend**: Node.js + Express API with MongoDB (via Mongoose) for off-chain data storage and indexing.
+
+---
+
+## 🏗 Architecture
+
+```
+[Manufacturer] --> [Next.js Frontend] --> [Express.js API] --> [MongoDB Atlas]
+                                     \                      
+                                      \---> [Polygon Smart Contracts]
+                                              |              
+                                              v              
+                                      [IPFS] & [Livepeer]
 ```
 
-💿 Install all dependencies:
+1. **Front-End** (Next.js + Redux Thunk + RainbowKit + Arcana)
+2. **Back-End** (Node.js + Express + Mongoose)
+3. **Blockchain Layer** (NFT & Product Registry on Polygon Mumbai)
+4. **Storage & Media** (IPFS for metadata; Livepeer for video streaming)
 
-```sh
-npm install
-```
+---
 
-🚴‍♂️ Run your App:
+## 🛠 Tech Stack
 
-```sh
-npm run dev
-```
+| Layer          | Technology                                   |
+| -------------- | -------------------------------------------- |
+| Frontend       | Next.js, React, Redux Thunk                  |
+| Styling        | Tailwind CSS                                 |
+| Backend        | Node.js, Express, Mongoose                   |
+| Database       | MongoDB Atlas                                |
+| Authentication | Arcana, RainbowKit, Polygon ID               |
+| Blockchain     | Solidity, Hardhat, Ethers.js, Polygon Mumbai |
+| Storage        | IPFS (metadata), Livepeer (videos)           |
+| Deployment     | Vercel (Frontend), Render.com (Backend)      |
 
-# Quick Start for Backend
+---
 
-📄 Clone or fork this repo :
-`https://github.com/Prasang023/EthForAll_EthermionsV2.git`:
+## 🔧 Prerequisites
 
-```sh
-git clone https://github.com/Prasang023/EthForAll_EthermionsV2.git
-```
+* Node.js (v16+)
+* npm (v8+)
+* MetaMask (or any EVM wallet) connected to Polygon Mumbai
+* [Livepeer account](https://livepeer.org)
+* [Arcana account](https://arcana.network)
 
-💿 Install all dependencies:
+---
 
-```sh
-cd server
-npm install
-```
+## 💻 Installation
 
-🚴‍♂️ Run your App:
+### Frontend
 
-```sh
-npm run dev
-```
+1. Clone the repo:
 
-# What this App uses
+   ```bash
+   git clone https://github.com/Prasang023/EthForAll_EthermionsV2.git
+   cd EthForAll_EthermionsV2/frontend
+   ```
+2. Install dependencies:
 
-### This App has four main parts 
-- [`Frontend`](#Frontend)
-- [`Backend`](#Backend)
-- [`Blockchain`](#Blockchain)
+   ```bash
+   npm install
+   ```
+3. Copy environment template and fill in values:
 
+   ```bash
+   cp .env.example .env.local
+   ```
+4. Start development server:
 
-# Frontend
+   ```bash
+   npm run dev
+   ```
 
-We are using Next.JS for rendering the frontend of the project. The frontend is integrated with both the backend and blockchain.
-We are using Redux-thunk along in javascript to make our webapp modular and easy to use. 
+### Backend
 
-# Backend
+1. Navigate to server directory:
 
-At the `Backend` of this App , A `Nodejs` server is running, which manages all the `requests` and `responses` from the user. 
+   ```bash
+   cd ../server
+   ```
+2. Install dependencies:
 
-This App Uses Some Node_Modules in order to work properly which includes:
-- `Mongoose`
-  - To make requests from backend to MongoDB
-- `dotenv`
-    - To fetch a .env file from the backend into any file and use it as process.env.example
-- `cors`
-    - allows a server to indicate any origins other than its own from which a browser should permit loading resources.
-- `Express`
-  - create a web-server
-  - handles request and response
+   ```bash
+   npm install
+   ```
+3. Copy environment template:
 
+   ```bash
+   cp .env.example .env
+   ```
+4. Start server:
 
-# Blockchain
+   ```bash
+   npm run dev
+   ```
 
-We chose polygon as the primary chain to deploy the smart contacts. This was due to polygons low gas fees and high supportibility. 
-The Contract Address are:
-1. nft contract : [0xf3E09b01F9678A1562b184Bb4512E163A387B4Cd](https://mumbai.polygonscan.com/address/0xf3E09b01F9678A1562b184Bb4512E163A387B4Cd#code)
-1. Products Registry: [0x573e31dF36aCb997aAC134d26Ba69d8C09b6C995](https://mumbai.polygonscan.com/address/0x573e31dF36aCb997aAC134d26Ba69d8C09b6C995#code)
+---
 
-# Sponsors Used for making App
-## Livepeer : 
-We are using LivePeer for uploading videos of the product at every level of the supply chain and store the metaData about the video on IPFS. It is displayed on the product details page using Livepeer Player every time user scans the QR code attached to the product. 
-## Arcana :
-We are using Arcana integrated with rainbowKit for social media authentication and authentication via email address. 
-## Polygon ID : 
-We are using Polygon ID for authenticating and while we are trnsfering the nfts on the polygon chain.
-## Polygon : 
-The best L-2 Solution outthere. Polygon was our first choice to deploy the smart contract wherein the contracts were directy deployed to the testnet for testing and no local host testing took place. Here's the Contract address of the contract's used here:
-1. NFT Contract - 0xf3E09b01F9678A1562b184Bb4512E163A387B4Cd
-2. Products Contract - 0x573e31dF36aCb997aAC134d26Ba69d8C09b6C995
+## ⚙️ Configuration
 
-# Where is this App deployed
+Ensure the following environment variables are set in **both** frontend (`.env.local`) and backend (`.env`):
 
-`Frontend` 
-- The frontend of this app is deployed on vercel :
-https://eth-for-all-ethermions-v2-alpha.vercel.app/
+| Variable              | Description                                                      |
+| --------------------- | ---------------------------------------------------------------- |
+| `NEXT_PUBLIC_API_URL` | Base URL of backend API (e.g., `https://ethforall.onrender.com`) |
+| `MONGODB_URI`         | MongoDB connection string                                        |
+| `PRIVATE_KEY`         | Deployer wallet private key for Hardhat                          |
+| `RPC_URL`             | Polygon Mumbai RPC endpoint                                      |
+| `LIVEPEER_API_KEY`    | Livepeer API key for video uploads                               |
+| `ARCANA_APP_ID`       | Arcana application ID for auth                                   |
 
+---
 
-`Backend`
-- The Backend of this app is deployed on https://ethforall.onrender.com/
+## 🚀 Usage
+
+1. **Mint a Product**: In the frontend, navigate to **Mint Product**, enter details, upload images/videos, and click **Mint**.
+2. **Print & Attach QR**: Download the Secure QR code, print, and attach to the physical product.
+3. **Transfer Ownership**: Scan the QR code, confirm transfer in your wallet, and enter the new owner’s address.
+4. **View History**: Any stakeholder scans the QR to see full provenance, media, and current owner.
+
+---
+
+## 📝 Smart Contract Addresses
+
+* **NFT Contract**: [0xf3E09b01F9678A1562b184Bb4512E163A387B4Cd](https://mumbai.polygonscan.com/address/0xf3E09b01F9678A1562b184Bb4512E163A387B4Cd#code)
+* **Product Registry**: [0x573e31dF36aCb997aAC134d26Ba69d8C09b6C995](https://mumbai.polygonscan.com/address/0x573e31dF36aCb997aAC134d26Ba69d8C09b6C995#code)
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. Fork the repository.
+2. Create a feature branch: `git checkout -b feature/YourFeature`.
+3. Commit your changes: `git commit -m "Add YourFeature"`.
+4. Push to the branch: `git push origin feature/YourFeature`.
+5. Open a pull request.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+Happy tracing! 🌐🔗🛡
