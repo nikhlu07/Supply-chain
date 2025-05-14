@@ -2,25 +2,6 @@
 A decentralized, blockchain-powered supply chain management system that ensures end-to-end transparency, traceability, and security from manufacturer to end customer.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## 🚀 Table of Contents
-
-1. [Overview](#overview)
-2. [Features](#features)
-3. [Architecture](#architecture)
-4. [Tech Stack](#tech-stack)
-5. [Prerequisites](#prerequisites)
-6. [Installation](#installation)
-
-   * [Frontend](#frontend)
-   * [Backend](#backend)
-7. [Configuration](#configuration)
-8. [Usage](#usage)
-9. [Smart Contract Addresses](#smart-contract-addresses)
-10. [Deployed Application](#deployed-application)
-11. [Contributing](#contributing)
-12. [License](#license)
-13. [Contact](#contact)
-
 ---
 
 ## 📖 Overview
@@ -36,7 +17,7 @@ By tokenizing products as NFTs on Polygon, stakeholders can seamlessly transfer 
 
 ---
 
-![Supplychain1](/images/supply1.png)
+![Supplychain1](/images/supply3.png)
 ## ✨ Features
 
 * **Product Minting**: Manufacturers register products (title, description, images, videos) and mint an NFT with embedded metadata.
@@ -166,7 +147,7 @@ Ensure the following environment variables are set in **both** frontend (`.env.l
 
 ---
 
-![Supplychain3](/images/supply3.png)
+![Supplychain3](/images/supply1.png)
 ## 📝 Smart Contract Addresses
 
 * **NFT Contract**: [0xf3E09b01F9678A1562b184Bb4512E163A387B4Cd](https://mumbai.polygonscan.com/address/0xf3E09b01F9678A1562b184Bb4512E163A387B4Cd#code)
