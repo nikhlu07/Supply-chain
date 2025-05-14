@@ -6,7 +6,7 @@ A decentralized, blockchain-powered supply chain management system that ensures 
 
 ## 📖 Overview
 
-Traditional supply chain systems suffer from fragmentation, lack of transparency, and vulnerability to fraud, leading to inefficiencies and loss of trust. **EthForAll Ethermions V2** leverages blockchain technology to create a decentralized supply chain management platform that:
+Traditional supply chain systems suffer from fragmentation, lack of transparency, and vulnerability to fraud, leading to inefficiencies and loss of trust. It leverages blockchain technology to create a decentralized supply chain management platform that:
 
 * Records every transaction in a tamper-proof, transparent ledger.
 * Provides real-time product provenance and ownership history.
