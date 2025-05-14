@@ -80,7 +80,7 @@ By tokenizing products as NFTs on Polygon, stakeholders can seamlessly transfer 
 
    ```bash
    https://github.com/nikhlu07/Supply-chain.git
-   cd Supply-chain/frontend
+   cd Supply-chain
    ```
 2. Install dependencies:
 
